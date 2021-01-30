@@ -1,5 +1,11 @@
 function menu_load()
     current_state, menu_selector = load_state, 1;
+    menu_table = {
+        "NEW GAME",
+        "SETTINGS",
+        "CREDITS"
+    }
+    game_logo = image.load("assets/misc/logo.png");
 end
 
 function menu_update()
@@ -15,11 +21,13 @@ function menu_update()
 end
 
 function menu_draw() 
-    draw.fillrect(0,0, 480, 272, color.new(255, 0, 0));
-
-    screen.print(10, 10, menu_selector);
+    draw.fillrect(0,0, 480, 272, CONST.white); -- Background color
+    game_logo:blit(40,20); -- Logo
+    screen.print(CONST.screen_width - 16, CONST.screen_height - 36, menu_table[menu_selector], .8, CONST.black, CONST.transparent, "right"); -- Menu option
 end
 
 function menu_free()
-
+    game_logo:free();
+    menu_table = nil;
+    menu_selector = nil;
 end

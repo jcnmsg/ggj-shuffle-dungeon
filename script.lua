@@ -1,3 +1,4 @@
+dofile("controllers/constants.lua");
 dofile("controllers/fx.lua")
 dofile("controllers/controls.lua")
 dofile("states/manager.lua")
