@@ -2,7 +2,7 @@ function credits_load()
     current_state = load_state;
 end
 
-function credits_update()
+function credits_update(dt)
     if controls.press("cross") then
         set_state(0);
     end

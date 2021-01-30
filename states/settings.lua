@@ -2,7 +2,7 @@ function settings_load()
     current_state = load_state;
 end
 
-function settings_update()
+function settings_update(dt)
     if controls.press("cross") then
         set_state(3);
     end

@@ -1,15 +1,22 @@
 function game_load()
     current_state = load_state;
+    world = World:new();
+    player = Player:new(40, 40);
 end
 
-function game_update()
-    if controls.press("cross") then
-        set_state(2);
+function game_update(dt)
+    if controls.press("select") then
+        debug = not debug;
     end
+
+    player:update(dt);
+    world:update(dt);
 end
 
 function game_draw() 
-    draw.fillrect(0,0, 480, 272, color.new(0, 0, 255));
+    world:draw(0);
+    player:draw();
+    world:draw(1);
 end
 
 function game_free()

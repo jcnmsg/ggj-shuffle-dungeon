@@ -8,7 +8,7 @@ function menu_load()
     game_logo = image.load("assets/misc/logo.png");
 end
 
-function menu_update()
+function menu_update(dt)
     if controls.press("up") and menu_selector > 1 then
         menu_selector = menu_selector - 1;
     elseif controls.press("down") and menu_selector < 3 then

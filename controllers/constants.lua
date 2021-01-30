@@ -11,8 +11,12 @@ CONST = {
     white = color.new(255, 255, 255),
     black = color.new(0, 0, 0),
     transparent = color.new(0,0,0,0),
+    translucent_red = color.new(255,0,0,80),
+    translucent_green = color.new(0,255,0,80),
+    translucent_blue = color.new(0,0,255,80),
     screen_width = 480,
-    screen_height = 272
+    screen_height = 272,
+    dt = 1/60,
 }
 
 CONST = protect(CONST);
