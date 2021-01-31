@@ -5,7 +5,7 @@ math.randomseed(os.time());
 dofile("helpers/constants.lua");
 dofile("helpers/fx.lua")
 dofile("helpers/controls.lua")
-dofile("helpers/math.lua")
+dofile("helpers/lua.lua")
 
 -- Classes
 dofile("classes/system.lua")
