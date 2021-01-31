@@ -1,3 +1,3 @@
 # ggj-projekt-viking
 
-Game made in Lua for GGJ2021.
+PSP game made in Lua for the Global Game Jam 2021.
