@@ -105,10 +105,10 @@ function Player:update(dt)
             self.current_length = 0;
             self.loop_anim = false;
             self.fps = 1;
-        else 
+        elseif (self.start_frame == 3 or self.start_frame == 12) then
             self.current_length = 5;
             self.loop_anim = true;
-            self.fps = 3;
+            self.fps = 4;
         end
     end
 
@@ -136,6 +136,7 @@ function Player:draw()
 
     if debug == true then
         draw.fillrect(self.col_x, self.col_y, self.col_w, self.col_h, CONST.translucent_red);
+        screen.print(10, 10, _test_rand)
     end
 end
 

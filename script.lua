@@ -9,18 +9,18 @@ dofile("helpers/math.lua")
 
 -- Classes
 dofile("classes/system.lua")
+dofile("classes/card.lua")
 dofile("classes/level.lua")
 dofile("classes/world.lua")
 dofile("classes/player.lua")
-dofile("classes/card.lua")
 
 -- Data
+dofile("data/card.lua")
+dofile("data/cards.lua")
 dofile("data/levels.lua")
 dofile("data/world.lua")
 dofile("data/player.lua")
 dofile("data/system.lua")
-dofile("data/card.lua")
-dofile("data/cards.lua")
 
 -- States
 dofile("states/manager.lua")
@@ -35,7 +35,7 @@ screen.dithering(0);
 screen.bilinear(0);
 screen.frameskip();
 current_frame = 0;
-debug = true;
+debug = false;
 
 while 1 do 
     if current_frame > 58 then current_frame = 0; else current_frame = current_frame + 1; end

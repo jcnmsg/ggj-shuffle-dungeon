@@ -4,6 +4,6 @@ world_data = {
     time = 0
 }
 
-for i = 0,1 do
+for i=0, 2 do
     world_data.levels[i] = Level:new(i);
 end

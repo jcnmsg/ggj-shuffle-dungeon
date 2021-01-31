@@ -5,7 +5,16 @@ function math_fmod(v1, v2) -- math.fmod is broken on real hardware, this is the 
     return false;
 end
 
-function math_random(a, b) -- math.random was returning the same number even with different seeds being generated beforehand ¯\_(ツ)_/¯
-    math.randomseed(os.time());
-    return math.random(a, b);
+function lua_shallowcopy(orig)
+    local orig_type = type(orig)
+    local copy
+    if orig_type == 'table' then
+        copy = {}
+        for orig_key, orig_value in pairs(orig) do
+            copy[orig_key] = orig_value
+        end
+    else -- number, string, boolean, etc
+        copy = orig
+    end
+    return copy
 end

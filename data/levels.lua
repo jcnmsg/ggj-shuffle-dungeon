@@ -53,38 +53,47 @@ level_data = {
             [8] = {
                 x = 0,
                 y = 0,
-                w = 240,
+                w = CONST.screen_width,
                 h = 16
             },
             [9] = {
-                x = 224,
-                y = 0,
-                w = 64,
-                h = 112
+                x = 256,
+                y = 64,
+                w = 144,
+                h = 48
+            },
+            [10] = {
+                x = 432,
+                y = 64,
+                w = 48,
+                h = 48
+            },
+            [11] = {
+                x = 400,
+                y = 160,
+                w = 32,
+                h = 16
             },
         },
         card_positions = {
             [0] = {
-                x = 10,
-                y = 10
+                x = 48,
+                y = 36
             },
             [1] = {
-                x = 10,
-                y = 10
+                x = 140,
+                y = 92
             },
             [2] = {
-                x = 10,
-                y = 10
+                x = 412,
+                y = 36
             },
             [3] = {
-                x = 10,
-                y = 10
-            },
-            [4] = {
-                x = 10,
-                y = 10
+                x = 368,
+                y = 210
             }
         },
+        cards = {}
     },
     [1] = {
         bg =  image.load("assets/backgrounds/bg1.png"),
@@ -96,6 +105,30 @@ level_data = {
                 h = 32
             }
         },
-        card_positions = {},
+        card_positions = {
+            [0] = {
+                x = 30,
+                y = 30
+            },
+        },
+        cards = {}
+    },
+    [2] = {
+        bg =  image.load("assets/backgrounds/bg1.png"),
+        platforms = {
+            [0] = {
+                x = 0,
+                y = 240,
+                w = CONST.screen_width,
+                h = 32
+            }
+        },
+        card_positions = {
+            [0] = {
+                x = 90,
+                y = 90
+            },
+        },
+        cards = {}
     }
 }
