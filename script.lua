@@ -1,12 +1,20 @@
+-- Helpers
 dofile("helpers/constants.lua");
 dofile("helpers/fx.lua")
 dofile("helpers/controls.lua")
 dofile("helpers/math.lua")
-dofile("data/levels.lua")
-dofile("data/player.lua")
+
+-- Classes
 dofile("classes/level.lua")
 dofile("classes/world.lua")
 dofile("classes/player.lua")
+
+-- Data
+dofile("data/levels.lua")
+dofile("data/world.lua")
+dofile("data/player.lua")
+
+-- States
 dofile("states/manager.lua")
 dofile("states/menu.lua")
 dofile("states/game.lua")

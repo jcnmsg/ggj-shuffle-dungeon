@@ -4,5 +4,5 @@ world_data = {
 }
 
 for i = 0,3 do
-    self.levels[i] = Level:new(i);
+    world_data.levels[i] = Level:new(i);
 end
