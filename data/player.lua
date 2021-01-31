@@ -1,4 +1,5 @@
 player_data = {
+    -- Platformer attrs
     sprite = image.loadsprite("assets/sprites/PlayerSpriteSheetFire.png", 32, 32),
     x_velocity = 150,
     y_velocity = 0,
@@ -22,6 +23,48 @@ player_data = {
     falling = false,
     jump_height = -400,
     gravity = -1600,
-    health = 200,
-    mana = 5,
+    prefab_id = -1 -- randomized later
+}
+
+player_attr_prefabs = {
+    [0] = {
+        life = 300,
+        mana = 5,
+        sdmg = 4,
+        arm = 5,
+        eva = 3,
+        elem = -1 -- randomized later
+    },
+    [1] = {
+        life = 400,
+        mana = 3,
+        sdmg = 3,
+        arm = 3,
+        eva = 3,
+        elem = -1 -- randomized later
+    },
+    [2] = {
+        life = 500,
+        mana = 3,
+        sdmg = 2,
+        arm = 5,
+        eva = 2,
+        elem = -1 -- randomized later
+    },
+    [3] = {
+        life = 300,
+        mana = 3,
+        sdmg = 5,
+        arm = 3,
+        eva = 3,
+        elem = -1 -- randomized later
+    },
+    [4] = {
+        life = 500,
+        mana = 5,
+        sdmg = 2,
+        arm = 5,
+        eva = 3,
+        elem = -1 -- randomized later
+    }
 }

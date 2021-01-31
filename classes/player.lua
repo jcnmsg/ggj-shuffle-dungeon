@@ -136,7 +136,6 @@ function Player:draw()
 
     if debug == true then
         draw.fillrect(self.col_x, self.col_y, self.col_w, self.col_h, CONST.translucent_red);
-        screen.print(10, 10, "current_level:"..world.current_level)
     end
 end
 

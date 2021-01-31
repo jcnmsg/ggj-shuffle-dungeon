@@ -1,5 +1,6 @@
 function game_load()
     current_state = load_state;
+    system = System:new();
     world = World:new();
     player = Player:new();
 end

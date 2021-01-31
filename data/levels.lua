@@ -63,8 +63,28 @@ level_data = {
                 h = 112
             },
         },
-        card_positions = {},
-        max_cards = 5,
+        card_positions = {
+            [0] = {
+                x = 10,
+                y = 10
+            },
+            [1] = {
+                x = 10,
+                y = 10
+            },
+            [2] = {
+                x = 10,
+                y = 10
+            },
+            [3] = {
+                x = 10,
+                y = 10
+            },
+            [4] = {
+                x = 10,
+                y = 10
+            }
+        },
     },
     [1] = {
         bg =  image.load("assets/backgrounds/bg1.png"),
@@ -77,32 +97,5 @@ level_data = {
             }
         },
         card_positions = {},
-        max_cards = 5,
-    },
-    [2] = {
-        bg =  image.load("assets/backgrounds/bg0.png"),
-        platforms = {
-            [0] = {
-                x = 0,
-                y = 240,
-                w = CONST.screen_width,
-                h = 32
-            }
-        },
-        card_positions = {},
-        max_cards = 5,
-    },  
-    [3] = {
-        bg =  image.load("assets/backgrounds/bg1.png"),
-        platforms = {
-            [0] = {
-                x = 0,
-                y = 240,
-                w = CONST.screen_width,
-                h = 32
-            }
-        },
-        card_positions = {},
-        max_cards = 5,
     }
 }
