@@ -1,5 +1,5 @@
 Player = {
-    sprite = image.loadsprite("assets/sprites/player.png", 32, 32),
+    sprite = image.loadsprite("assets/sprites/PlayerSpriteSheetFire.png", 32, 32),
     x_velocity = 150,
     y_velocity = 0,
     x = 0,
@@ -14,21 +14,24 @@ Player = {
 
     current_animation = 0,
     current_frame = 0,
-    current_length = 3,
+    current_length = 0,
     start_frame = 0,
+    loop_anim = false,
+    fps = 3,
 
-    direction = 2;
+    direction = 2,
 
-    jumping = false;
-    second_jumping = false;
-    jump_height = -400;
-    gravity = -1600;
+    jumping = false,
+    second_jumping = false,
+    falling = false,
+    jump_height = -400,
+    gravity = -1600,
 };
 
 function Player:update(dt)
     local vInput = vInput();
     local hInput = hInput();
-    
+
     -- Update direction and move x
     if hInput > 0 then
         self.direction = 2;
@@ -89,22 +92,79 @@ function Player:update(dt)
     -- Track and update animations
     if  hInput == 0 then -- stopped
         if self.direction == 2 then
-            self.start_frame = 1;
+            self.start_frame = 9;
         else
             self.start_frame = 0;
-        end
+        end    
     elseif hInput == 1 then  -- right
-        self.start_frame = 1;
+        self.start_frame = 12;
     elseif hInput == -1 then -- left
-        self.start_frame = 0;
+        self.start_frame = 3;
+    end
+
+    if (self.y_velocity > 60) then
+        if self.direction == 2 then
+            self.start_frame = 11;
+        else
+            self.start_frame = 2;
+        end
+    end
+
+    if self.jumping or self.second_jumping then
+        if self.direction == 2 then
+            self.start_frame = 10;
+        elseif self.direction == 1 then
+            self.start_frame = 1;
+        end
+    end
+
+    if self.current_animation ~= self.start_frame or second_jumping then
+        self.current_animation = self.start_frame;
+        self.current_frame = self.start_frame;
+        if (self.start_frame == 0 or self.start_frame == 9) then
+            self.current_length = 0;
+            self.loop_anim = false;
+            self.fps = 1;
+        elseif (self.start_frame == 1 or self.start_frame == 10) then
+            self.current_length = 1;
+            self.loop_anim = false;
+            self.fps = 10;
+        elseif (self.start_frame == 2 or self.start_frame == 11) then
+            self.current_length = 0;
+            self.loop_anim = false;
+            self.fps = 1;
+        else 
+            self.current_length = 5;
+            self.loop_anim = true;
+            self.fps = 3;
+        end
+    end
+
+    if (math_fmod(current_frame, self.fps)) then
+        if self.current_frame < self.current_animation + self.current_length then
+            self.current_frame = self.current_frame + 1;
+        elseif self.current_frame >= self.current_animation + self.current_length and self.loop_anim == true then
+            self.current_frame = self.start_frame;
+        end
+    end
+
+    if (self.x + self.w/2 > 480) then
+        self.x = 0 - self.w/2;
+        world.current_level = world.current_level + 1;
+    end
+
+    if (self.x + self.w/2 < 0) then 
+        self.x = 480 - self.w/2 - 1;
+        world.current_level = world.current_level - 1;
     end
 end
 
 function Player:draw()
-    self.sprite:blitsprite(self.x, self.y, self.start_frame);
+    self.sprite:blitsprite(self.x, self.y, self.current_frame);
 
     if debug == true then
         draw.fillrect(self.col_x, self.col_y, self.col_w, self.col_h, CONST.translucent_red);
+        screen.print(10, 10, "current_level:"..world.current_level)
     end
 end
 
@@ -123,8 +183,9 @@ function Player:new(x, y)
 end
 
 function Player:is_colliding()
-    for i=0, table.getn(world.platforms) do
-        local plat = world.platforms[i];
+    local plats = world.levels[world.current_level].platforms;
+    for i=0, table.getn(plats) do
+        local plat = plats[i];
 
         if self.col_x < plat.x + plat.w and
             self.col_x + self.col_w > plat.x and

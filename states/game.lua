@@ -1,7 +1,7 @@
 function game_load()
     current_state = load_state;
     world = World:new();
-    player = Player:new(40, 40);
+    player = Player:new(64, 156);
 end
 
 function game_update(dt)

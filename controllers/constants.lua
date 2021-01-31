@@ -14,6 +14,7 @@ CONST = {
     translucent_red = color.new(255,0,0,80),
     translucent_green = color.new(0,255,0,80),
     translucent_blue = color.new(0,0,255,80),
+    bg_blue = color.new(29, 43, 83),
     screen_width = 480,
     screen_height = 272,
     dt = 1/60,

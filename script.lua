@@ -1,6 +1,8 @@
 dofile("controllers/constants.lua");
 dofile("controllers/fx.lua")
 dofile("controllers/controls.lua")
+dofile("controllers/math.lua")
+dofile("states/classes/level.lua")
 dofile("states/classes/world.lua")
 dofile("states/classes/player.lua")
 dofile("states/manager.lua")
