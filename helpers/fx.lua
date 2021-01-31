@@ -1,7 +1,7 @@
 fx = {
     scanlines1 = image.load("assets/fx/scanlines1.png");
     scanlines2 = image.load("assets/fx/scanlines2.png");
-    scanline_mode = 0;
+    scanline_mode = 2;
 };
 
 function fx_update()

@@ -1,10 +1,4 @@
-World = {
-    current_level = 0,
-    levels = {
-        [0] = Level:new(0),
-        [1] = Level:new(1),
-    }
-};
+World = {};
 
 function World:update()
     
@@ -19,7 +13,7 @@ function World:draw(layer)
 end
 
 function World:new()
-    local w = {};
+    local w = world_data;
     setmetatable(w, self);
     self.__index = self;
     return w;

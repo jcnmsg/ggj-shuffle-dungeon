@@ -1,10 +1,12 @@
-dofile("controllers/constants.lua");
-dofile("controllers/fx.lua")
-dofile("controllers/controls.lua")
-dofile("controllers/math.lua")
-dofile("states/classes/level.lua")
-dofile("states/classes/world.lua")
-dofile("states/classes/player.lua")
+dofile("helpers/constants.lua");
+dofile("helpers/fx.lua")
+dofile("helpers/controls.lua")
+dofile("helpers/math.lua")
+dofile("data/levels.lua")
+dofile("data/player.lua")
+dofile("classes/level.lua")
+dofile("classes/world.lua")
+dofile("classes/player.lua")
 dofile("states/manager.lua")
 dofile("states/menu.lua")
 dofile("states/game.lua")
@@ -17,7 +19,7 @@ screen.dithering(0);
 screen.bilinear(0);
 screen.frameskip();
 current_frame = 0;
-debug = true;
+debug = false;
 
 while 1 do 
     if current_frame > 58 then current_frame = 0; else current_frame = current_frame + 1; end

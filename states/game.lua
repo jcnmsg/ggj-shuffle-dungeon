@@ -1,12 +1,16 @@
 function game_load()
     current_state = load_state;
     world = World:new();
-    player = Player:new(64, 156);
+    player = Player:new();
 end
 
 function game_update(dt)
     if controls.press("select") then
         debug = not debug;
+    end
+
+    if (controls.press("start")) then
+        fx_update();
     end
 
     player:update(dt);

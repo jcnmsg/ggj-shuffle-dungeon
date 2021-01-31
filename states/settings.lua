@@ -6,10 +6,6 @@ function settings_update(dt)
     if controls.press("cross") then
         set_state(3);
     end
-
-    if (controls.press("square")) then
-        fx_update();
-    end
 end
 
 function settings_draw() 

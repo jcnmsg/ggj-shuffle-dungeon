@@ -1,32 +1,4 @@
-Player = {
-    sprite = image.loadsprite("assets/sprites/PlayerSpriteSheetFire.png", 32, 32),
-    x_velocity = 150,
-    y_velocity = 0,
-    x = 0,
-    y = 0,
-    w = 32,
-    h = 32,
-
-    col_x = 0,
-    col_y = 0,
-    col_w = 0,
-    col_h = 0,
-
-    current_animation = 0,
-    current_frame = 0,
-    current_length = 0,
-    start_frame = 0,
-    loop_anim = false,
-    fps = 3,
-
-    direction = 2,
-
-    jumping = false,
-    second_jumping = false,
-    falling = false,
-    jump_height = -400,
-    gravity = -1600,
-};
+Player = {};
 
 function Player:update(dt)
     local vInput = vInput();
@@ -128,7 +100,7 @@ function Player:update(dt)
         elseif (self.start_frame == 1 or self.start_frame == 10) then
             self.current_length = 1;
             self.loop_anim = false;
-            self.fps = 10;
+            self.fps = 5;
         elseif (self.start_frame == 2 or self.start_frame == 11) then
             self.current_length = 0;
             self.loop_anim = false;
@@ -168,15 +140,8 @@ function Player:draw()
     end
 end
 
-function Player:new(x, y)
-    local p = {
-        x = x,
-        y = y,
-        col_x = x + 8,
-        col_y = y + 2,
-        col_w = 16,
-        col_h = 30
-    };
+function Player:new()
+    p = player_data;
     setmetatable(p, self);
     self.__index = self;
     return p;
