@@ -30,7 +30,7 @@ level_data = {
         card_positions = {
             [0] = {
                 x = 450,
-                y = 190
+                y = 198
             }
         },
         cards = {}
