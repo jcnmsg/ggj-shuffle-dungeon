@@ -19,6 +19,7 @@ CONST = {
     screen_width = 480,
     screen_height = 272,
     dt = 1/60,
+    font = font.load("assets/fonts/pixeled.pgf")
 }
 
 CONST = protect(CONST);
