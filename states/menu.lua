@@ -6,6 +6,7 @@ function menu_load()
         "CREDITS"
     }
     game_logo = image.load("assets/misc/logo.png");
+    game_bg = image.load("assets/backgrounds/bg0.png");
 end
 
 function menu_update(dt)
@@ -21,13 +22,13 @@ function menu_update(dt)
 end
 
 function menu_draw() 
-    draw.fillrect(0,0, 480, 272, CONST.white); -- Background color
-    game_logo:blit(40,20); -- Logo
-    screen.print(CONST.screen_width - 16, CONST.screen_height - 36, menu_table[menu_selector], .8, CONST.black, CONST.transparent, "right"); -- Menu option
+    game_bg:blit(0, 0);
+    screen.print(CONST.screen_width - 16, CONST.screen_height - 36, menu_table[menu_selector], .8, CONST.white, CONST.black, "center"); -- Menu option
 end
 
 function menu_free()
     game_logo:free();
+    game_bg:free();
     menu_table = nil;
     menu_selector = nil;
 end

@@ -10,6 +10,7 @@ end
 CONST = {
     white = color.new(255, 255, 255),
     black = color.new(0, 0, 0),
+    grey = color.new(120, 120, 120),
     transparent = color.new(0,0,0,0),
     translucent_red = color.new(255,0,0,80),
     translucent_green = color.new(0,255,0,80),
