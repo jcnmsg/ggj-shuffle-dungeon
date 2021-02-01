@@ -13,6 +13,7 @@ dofile("classes/card.lua")
 dofile("classes/level.lua")
 dofile("classes/world.lua")
 dofile("classes/player.lua")
+dofile("classes/boss.lua")
 
 -- Data
 dofile("data/card.lua")
@@ -20,6 +21,7 @@ dofile("data/cards.lua")
 dofile("data/levels.lua")
 dofile("data/world.lua")
 dofile("data/player.lua")
+dofile("data/boss.lua")
 dofile("data/system.lua")
 
 -- States

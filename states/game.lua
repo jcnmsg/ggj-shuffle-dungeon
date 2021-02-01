@@ -3,6 +3,7 @@ function game_load()
     system = System:new();
     world = World:new();
     player = Player:new();
+    boss = Boss:new();
 end
 
 function game_update(dt)

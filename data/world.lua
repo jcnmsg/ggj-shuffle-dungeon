@@ -1,5 +1,5 @@
 world_data = {
-    current_level = 0,
+    current_level = 4,
     levels = {},
     time = 0
 }

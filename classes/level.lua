@@ -6,6 +6,10 @@ function Level:update()
             self.cards[i]:update();
         end
     end
+
+    if (self.level == world.current_level == boss.level) then
+        boss:update();
+    end
 end
 
 function Level:draw(layer) -- 0 = bg, 1 = fg
@@ -19,6 +23,9 @@ function Level:draw(layer) -- 0 = bg, 1 = fg
         end
     end
 
+    if world.current_level == boss.level then
+        boss:draw();
+    end
 
     if debug == true then
         for i=0, table.getn(self.platforms) do
