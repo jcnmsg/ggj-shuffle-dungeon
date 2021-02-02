@@ -31,6 +31,7 @@ end
 function menu_free()
     game_logo:free();
     game_bg:free();
+    _p:free();
     menu_table = nil;
     menu_selector = nil;
 end
