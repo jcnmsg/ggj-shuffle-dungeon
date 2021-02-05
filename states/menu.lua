@@ -7,7 +7,6 @@ function menu_load()
     }
     game_logo = image.load("assets/misc/logo.png");
     game_bg = image.load("assets/backgrounds/bg0.png");
-    _p = image.loadsprite("assets/sprites/PlayerSpriteSheetFire.png", 32, 32);
 end
 
 function menu_update(dt)
@@ -24,14 +23,12 @@ end
 
 function menu_draw() 
     game_bg:blit(0, 0);
-    _p:blitsprite(310, 192, 9);
     screen.print(CONST.font, CONST.screen_width - 16, CONST.screen_height - 42, menu_table[menu_selector], .25, CONST.white, CONST.transparent, "right"); -- Menu option
 end
 
 function menu_free()
     game_logo:free();
     game_bg:free();
-    _p:free();
     menu_table = nil;
     menu_selector = nil;
 end

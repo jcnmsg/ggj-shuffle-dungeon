@@ -1,6 +1,6 @@
 player_data = {
     -- Platformer attrs
-    sprite = image.loadsprite("assets/sprites/PlayerSpriteSheetFire.png", 32, 32),
+    sprite = nil,
     x_velocity = 150,
     y_velocity = 0,
     x = 310,
@@ -23,7 +23,8 @@ player_data = {
     falling = false,
     jump_height = -400,
     gravity = -1600,
-    prefab_id = -1 -- randomized later
+    attrs = {},
+    cards = {}
 }
 
 player_attr_prefabs = {

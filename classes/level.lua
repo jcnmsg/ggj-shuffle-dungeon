@@ -39,7 +39,7 @@ function Level:new(lvl)
 
     if table.getn(l.card_positions) >= 0 then
         for i=0, table.getn(l.card_positions) do
-            l.cards[i] = Card:new( l.card_positions[i].x,  l.card_positions[i].y);
+            l.cards[i] = Card:new( l.card_positions[i].x,  l.card_positions[i].y, lvl, i);
         end
     end
 

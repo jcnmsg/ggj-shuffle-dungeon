@@ -6,5 +6,5 @@ system_data = {
         [3] = "LEAF",
         [4] = "ROCK",
         [5] = "ICE"
-    }
+    },
 }

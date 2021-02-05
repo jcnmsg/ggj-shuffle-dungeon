@@ -1,5 +1,5 @@
--- Randomize seed
-math.randomseed(os.time());
+-- Random seed
+math.randomseed(os.date("%S"));
 
 -- Helpers
 dofile("helpers/constants.lua");

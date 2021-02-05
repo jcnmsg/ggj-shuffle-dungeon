@@ -140,7 +140,15 @@ function Player:draw()
 end
 
 function Player:new()
-    p = player_data;
+    p = lua_shallowcopy(player_data);
+    local prefab_id = math.random(0, 4);
+    local elem = math.random(0, 4);
+    local elem_name = system_data.elements[elem];
+
+    p.attrs = player_attr_prefabs[prefab_id];
+    p.attrs.elem = elem;
+    p.sprite = image.loadsprite("assets/sprites/Player/PlayerSpriteSheet("..elem_name..").png", p.w, p.h);
+
     setmetatable(p, self);
     self.__index = self;
     return p;

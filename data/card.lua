@@ -1,5 +1,6 @@
+card_sprite = image.loadsprite("assets/sprites/SmallCardSheet.png", 8, 8);
 card_data = {
-    sprite = image.loadsprite("assets/sprites/SmallCardSheet.png", 8, 8),
+    sprite = card_sprite,
     x = 0,
     y = 0,
     w = 8,
@@ -10,4 +11,11 @@ card_data = {
     start_frame = 0,
     loop_anim = true,
     fps = 10,
+    visible = false,
+    active = false,
+
+    -- rpg elements
+    bigsprite = nil,
+    type = -1,
+    mod = -1,
 }
