@@ -136,6 +136,7 @@ function Player:draw()
 
     if debug == true then
         draw.fillrect(self.col_x, self.col_y, self.col_w, self.col_h, CONST.translucent_red);
+        screen.print(10, 10, "Health:"..self.attrs.life.." | Mana:"..self.attrs.mana.." | SDMG:"..self.attrs.sdmg.." | ARM:"..self.attrs.arm.." | EVA:"..self.attrs.eva, 0.5, CONST.white, CONST.transparent);
     end
 end
 
