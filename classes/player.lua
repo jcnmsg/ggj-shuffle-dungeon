@@ -48,13 +48,15 @@ function Player:update(dt)
             self.y_velocity = 0;
             self.jumping = false;
             self.second_jumping = false;
-        end
+        end            
 
         while (self:is_colliding()) do
             local _plat = self:is_colliding();
 
             if (_plat.y + _plat.h < self.y + 10) then
                 self.y = self.y + 1;
+                self.jumping = true;
+                self.second_jumping = true;
             else
                 self.y = self.y - 1;
             end
