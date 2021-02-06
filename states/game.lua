@@ -4,6 +4,7 @@ function game_load()
     world = World:new();
     player = Player:new();
     boss = Boss:new();
+    pause = Pause:new(); 
 end
 
 function game_update(dt)
@@ -11,18 +12,20 @@ function game_update(dt)
         debug = not debug;
     end
 
-    if (controls.press("start")) then
-        fx_update();
+    if controls.press("start") then
+        paused = not paused;
     end
 
     player:update(dt);
     world:update(dt);
+    pause:update(dt);
 end
 
 function game_draw() 
     world:draw(0);
     player:draw();
     world:draw(1);
+    pause:draw();
 end
 
 function game_free()

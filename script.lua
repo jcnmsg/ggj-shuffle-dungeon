@@ -8,6 +8,7 @@ dofile("helpers/controls.lua")
 dofile("helpers/lua.lua")
 
 -- Classes
+dofile("classes/pause.lua")
 dofile("classes/system.lua")
 dofile("classes/card.lua")
 dofile("classes/level.lua")
@@ -38,6 +39,7 @@ screen.bilinear(0);
 screen.frameskip();
 current_frame = 0;
 debug = false;
+paused = false;
 
 while 1 do 
     if current_frame > 58 then current_frame = 0; else current_frame = current_frame + 1; end
