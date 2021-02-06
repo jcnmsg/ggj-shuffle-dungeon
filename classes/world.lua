@@ -1,11 +1,13 @@
 World = {};
 
 function World:update()
-    if (60 - math.floor(world.time:time()/1000) == 0) then
-        timer.stop(world.time);
-    end
+    if paused == false then
+        if (60 - math.floor(world.time:time()/1000) == 0) then
+            timer.stop(world.time);
+        end
 
-    self.levels[self.current_level]:update();
+        self.levels[self.current_level]:update();
+    end
 end
 
 function World:draw(layer)
@@ -13,7 +15,6 @@ function World:draw(layer)
         self.levels[self.current_level]:draw(0);
     elseif layer == 1 then
         self.levels[self.current_level]:draw(1);
-        --screen.print(CONST.font, CONST.screen_width - 6, CONST.screen_height - 37, tostring(60 - math.floor(world.time:time()/1000)), 0.5, CONST.white, CONST.transparent, "right")
     end
 end
 

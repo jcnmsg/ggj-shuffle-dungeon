@@ -19,6 +19,12 @@ function Card:update(dt)
                 self.current_frame = self.start_frame;
             end
         end
+
+        if self:colliding_with_player() then
+            self.active = false;
+            self.visible = false;
+            player:add_card(self);
+        end
     end
 end
 
@@ -35,7 +41,7 @@ function Card:new(x, y, lvl, i)
     
     crd.x = x;
     crd.y = y;
-    crd.bigsprite = cards_data[r].bigsprite;
+    crd.bigsprite = cards_data[r].sprite;
     crd.type = cards_data[r].type;
     crd.mod = cards_data[r].mod;
 
@@ -49,7 +55,7 @@ function Card:new(x, y, lvl, i)
     return crd;
 end
 
-function Card:is_colliding()
+function Card:colliding_with_player()
     if self.x < player.col_x + player.col_w and
         self.x + self.w > player.col_x and
         self.y < player.col_y + player.col_h and
